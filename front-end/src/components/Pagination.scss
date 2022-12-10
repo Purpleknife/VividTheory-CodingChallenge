@@ -1,6 +1,12 @@
+@import "../styles/variables";
+
 
 .pages_list {
+  text-align: center;
+  margin-bottom: 2em;
+  margin-top: 3em;
   
+
   ul {
     list-style-type: none;
     overflow: hidden;
@@ -9,9 +15,19 @@
     li {
       cursor: pointer;
       display: inline;
-      border: 1px solid black;
-      //margin: -1em;
+      border: 1px solid $primary_color;
+      border-radius: 5px;
       padding: 1em;
+      font-weight: bold;
+      margin: 0.5em;
+      background-color: $primary_color;
+
+      button {
+        background-color: transparent;
+        border: unset;
+        font-weight: bold;
+        cursor: pointer;
+      }
     }
   }
 }

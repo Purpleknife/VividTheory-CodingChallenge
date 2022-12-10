@@ -1,28 +1,44 @@
+@import "../styles/variables";
 
-.container {
-  
+.one_card {
+  border: 1px solid $secondary_color;
+  display: flex;
+  //text-align: left;
+  width: 30em;
+  margin-top: 1em;
+  flex-wrap: wrap;
+  border-radius: 5px;
+  padding-bottom: 2.5em;
+  height: 24em;
+  cursor: pointer;
 
-  .one_card {
-    border: 1px solid black;
-    display: flex;
-    flex-direction: column;
-    text-align: left;
-    width: 25em;
-    margin-top: 1em;
-    flex-wrap: wrap;
-    border-radius: 5px;
-    padding-left: 2em;
-    padding-right: 2em;
+
+  img {
     height: 15em;
-
-    .content {
-      display: -webkit-box;
-      -webkit-line-clamp: 4;
-      -webkit-box-orient: vertical;
-      line-height: 1.8em;
-      max-width: 100%;
-      overflow: hidden;
-    }
-    
+    width: 100vh;
+    border-radius: 5px;
+    object-fit: cover;
   }
+
+  .date {
+    margin-top: 0.5em;
+    padding-left: 1em;
+    font-weight: bold;
+    color: $primary_color;
+  }
+
+  .content {
+    display: -webkit-box;
+    -webkit-line-clamp: 5;
+    -webkit-box-orient: vertical;
+    line-height: 1em;
+    max-width: 100%;
+    overflow: hidden;
+    padding-left: 1em;
+    padding-right: 1em;
+    text-align: justify;
+    text-justify: inter-word;
+  }
+  
 }
+

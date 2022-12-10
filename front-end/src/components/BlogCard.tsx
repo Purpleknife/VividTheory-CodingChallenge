@@ -2,6 +2,8 @@ import React from 'react';
 
 import DOMPurify from 'dompurify';
 
+import { useNavigate } from 'react-router-dom';
+
 import './BlogCard.scss';
 
 /*
@@ -22,16 +24,26 @@ interface BlogCardProps {
 
 
 const BlogCard = (props: BlogCardProps) => {
+  const navigate = useNavigate();
+
+  const navigateToBlogPage = () => {
+    navigate(`/${props.slug}`);
+  };
 
   return (
-    <div className='container'>
-      <div className='one_card'>
-        {props.published_at}
+    <div className='one_card' onClick={navigateToBlogPage}>
 
-        <div className='content' dangerouslySetInnerHTML={{__html: DOMPurify.sanitize(props.content)}}></div>
-        
-      </div>
+      <img
+        src={props.image}
+        alt='blog_card_image'
+      />
+
+      <span className='date'><i className="fa-solid fa-calendar-days"></i> {props.published_at}</span>
+
+      <span className='content' dangerouslySetInnerHTML={{__html: DOMPurify.sanitize(props.content)}}></span>
+
     </div>
+
   );
 }
  

@@ -7,6 +7,9 @@ import Pagination from './Pagination';
 
 import './BlogSearchPage.scss';
 
+import moment from "moment";
+
+
 const BlogSearchPage = () => {
   const [blogs, setBlogs] = useState<any>(null);
   const [count, setCount] = useState<number>(0);
@@ -54,7 +57,7 @@ const BlogSearchPage = () => {
         title={blog.title}
         content={blog.content}
         image={blog.image}
-        published_at={blog.published_at}
+        published_at={moment(blog.published_at).format('MMMM Do YYYY, h:mm:ss a')}
         slug={blog.slug}
       />
     )
@@ -71,7 +74,7 @@ const BlogSearchPage = () => {
 
   return (
     <div className='main_page'>
-      Explore our HeyAuto blogs <i className="fa-sharp fa-solid fa-caret-down"></i>
+      <span className='title'>Explore our HeyAuto blogs <i className="fa-sharp fa-solid fa-caret-down"></i></span>
 
       <div className='blogs_container'>
         {blogList}

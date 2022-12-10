@@ -1,0 +1,39 @@
+@import "../styles/variables";
+
+.single_blog {
+  border: 1px solid $secondary_color;
+  border-radius: 5px;
+  margin: 4em;
+
+  img {
+    width: 100%;
+    height: 700px;
+    object-fit: cover;
+    margin-bottom: 2em;
+  }
+
+  .date {
+    color: $secondary_color;
+    margin-left: 3em;
+    font-size: 1em;
+    font-weight: bold;
+    margin-top: -0.2em;
+
+    i {
+      margin-right: 0.5em;
+    }
+  }
+
+  .title {
+    font-weight: bold;
+    font-size: 2em;
+    color: $primary_color;
+    margin-left: 1.5em;
+    margin-top: 2em;
+  }
+
+  .blog_content {
+    margin: 3em;
+    margin-top: 5em;
+  }
+}

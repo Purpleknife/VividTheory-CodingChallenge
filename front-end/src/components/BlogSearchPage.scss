@@ -1,5 +1,20 @@
+@import "../styles/variables";
+
 
 .main_page {
+
+  .title {
+    display: flex;
+    justify-content: center;
+    color: $secondary_color;
+    margin-top: 2em;
+    font-size: 27px;
+
+    i {
+      margin-left: 0.5em;
+      margin-top: 0.2em;
+    }
+  }
 
   .blogs_container {
     margin-top: 2em;
