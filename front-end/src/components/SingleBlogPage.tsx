@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 
 import axios from 'axios';
 
@@ -21,6 +21,8 @@ interface Blog {
 
 const SingleBlogPage = () => {
   const [singleBlog, setSingleBlog] = useState<Blog | null>(null);
+
+  const navigate = useNavigate();
 
   const params = useParams(); // => To get the slug from the URL.
   
@@ -51,21 +53,23 @@ const SingleBlogPage = () => {
 
   return (
     <>
-    {singleBlog &&
-    
-      <div className='single_blog'>
-        <img
-          src={singleBlog.image}
-          alt='blog_image'
-        />
+      <button className='back' onClick={() => navigate('/')}>Back to Home Page</button>
+      
+      {singleBlog &&
+      
+        <div className='single_blog'>
+          <img
+            src={singleBlog.image}
+            alt='blog_image'
+          />
+          
+          <span className='title'>{singleBlog.title}</span>
+          <p className='date'><i className="fa-solid fa-calendar-days"></i>{singleBlog.published_at}</p>
         
-        <span className='title'>{singleBlog.title}</span>
-        <p className='date'><i className="fa-solid fa-calendar-days"></i>{singleBlog.published_at}</p>
-       
 
-        <div className='blog_content' dangerouslySetInnerHTML={{__html: DOMPurify.sanitize(singleBlog.content)}}></div>
-      </div>
-    }
+          <div className='blog_content' dangerouslySetInnerHTML={{__html: DOMPurify.sanitize(singleBlog.content)}}></div>
+        </div>
+      }
     </>
   );
 }
