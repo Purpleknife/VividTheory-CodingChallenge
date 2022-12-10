@@ -3,12 +3,15 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 
 import BlogCard from './BlogCard';
+import Pagination from './Pagination';
 
 import './BlogSearchPage.scss';
 
 const BlogSearchPage = () => {
   const [blogs, setBlogs] = useState<any>(null);
   const [count, setCount] = useState<number>(0);
+  const [currentPage, setCurrentPage] = useState<number>(1);
+
 
   // Get total of blogs in the db to setup number of pages dynamically:
   const getTotalOfBlogs = async() => {
@@ -58,23 +61,25 @@ const BlogSearchPage = () => {
   });
 
   useEffect(() => {
-    loadBlogs(1); // => It will load the first six blogs when you access the page the first time.
     getTotalOfBlogs();
-  }, []);
+  });
+
+  useEffect(() => {
+    loadBlogs(currentPage);
+  }, [currentPage]);
 
 
   return (
     <div className='main_page'>
       Explore our HeyAuto blogs <i className="fa-sharp fa-solid fa-caret-down"></i>
-    
-      <button onClick={() => loadBlogs(2)}>Load 2</button>
-      <button onClick={() => loadBlogs(3)}>Load 3</button>
-      <button onClick={() => loadBlogs(4)}>Load 4</button>
 
       <div className='blogs_container'>
         {blogList}
       </div>
       
+      <div className='pagination'>
+        <Pagination currentPage={currentPage} setCurrentPage={setCurrentPage} blogsCount={count} />
+      </div>
     </div>
   );
 }
