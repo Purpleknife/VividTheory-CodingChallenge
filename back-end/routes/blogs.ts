@@ -40,8 +40,29 @@ module.exports = (db: any) => {
 
     db.query(queryString)
       .then((data: any) => {
-        console.log('blogs in back-end', data.rows);
         res.json(data.rows);
+      })
+      .catch((error: Error) => {
+        console.log(error.message);
+      });
+  });
+
+
+  // Route to fetch a specific blog depending on its slug:
+  router.get('/:slug', (req: Request, res: Response) => {
+    const slug: string = req.params.slug;
+
+    const queryParams: string[] = [slug];
+
+    const queryString: string = `
+      SELECT * FROM blogs
+      WHERE published_at IS NOT NULL
+      AND slug = $1;
+      `;
+
+    db.query(queryString, queryParams)
+      .then((data: any) => {
+        res.json(data.rows[0]);
       })
       .catch((error: Error) => {
         console.log(error.message);
