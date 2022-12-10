@@ -22,7 +22,7 @@ const Pagination = (props: PaginationProps) => {
 
   useEffect(() => {
     setMaxPageLimit(pages[pages.length - 1]);
-  });
+  }, [pages]);
 
   // Iterate through our pages array and return a list:
   const pagesList = pages.map((page: number) => {

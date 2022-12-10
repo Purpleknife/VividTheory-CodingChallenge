@@ -20,7 +20,7 @@ interface Blog {
 
 
 const BlogSearchPage = () => {
-  const [blogs, setBlogs] = useState<any>(null);
+  const [blogs, setBlogs] = useState<any[]>([]);
   const [count, setCount] = useState<number>(0);
   const [currentPage, setCurrentPage] = useState<number>(1);
 
@@ -47,7 +47,9 @@ const BlogSearchPage = () => {
       });
   };
 
-  const blogList = blogs?.map((blog: Blog) => {
+  const data = Array.from(blogs); // => It was throwing an error about map in production mode, even tho blogs is an array, so fixed it with this.
+
+  const blogList = data?.map((blog: Blog) => {
     return (
       <BlogCard
         key={blog.id}

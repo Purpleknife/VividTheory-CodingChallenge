@@ -31,7 +31,6 @@ const SingleBlogPage = () => {
   const loadSingleBlog = async() => {
     return axios.get(`/${params.slug}`)
       .then((res) => {
-        console.log('single blog', res.data);
         setSingleBlog({
           id: res.data.id,
           title: res.data.title,
@@ -48,7 +47,7 @@ const SingleBlogPage = () => {
 
   useEffect(() => {
     loadSingleBlog();
-  }, []);
+  });
 
 
   return (
