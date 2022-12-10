@@ -28,8 +28,8 @@ This challenge's goal is to implement a responsive blog web application that has
 4. Install dependencies: `npm i` in both `front-end` and `back-end` folders.
 5. `cd back-end` then `npm start` to run the Server on port 8080.
 6. `cd front-end` then:
-  6.1. Run `npm start` to run the app in `development mode`.
-  6.2. Run `npm run build`, `npm install -g serve` then `serve -s build` to run the app in `production mode`.
+    1. Run `npm start` to run the app in `development mode`.
+    2. Run `npm run build`, `npm install -g serve` then `serve -s build` to run the app in `production mode`.
 
 ## Built with
 - Database
