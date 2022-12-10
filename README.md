@@ -19,7 +19,7 @@ This challenge's goal is to implement a responsive blog web application that has
   - [X] The Single Blog Page is a page that displays the content of a specific blog.
   - [X] The content of the blog is a html string and should be injected into your pages
     JSX.
-  - [X] These pages exist on the route "/<slug>", where slug is the current blogs slug.
+  - [X] These pages exist on the route "/:slug", where slug is the current blogs slug.
 
 ## Setup
 1. `git clone` this project.
@@ -28,8 +28,8 @@ This challenge's goal is to implement a responsive blog web application that has
 4. Install dependencies: `npm i` in both `front-end` and `back-end` folders.
 5. `cd back-end` then `npm start` to run the Server on port 8080.
 6. `cd front-end` then:
-  - Run `npm start` to run the app in `development mode`.
-  - Run `npm run build`, `npm install -g serve` then `serve -s build` to run the app in `production mode`.
+  6.1. Run `npm start` to run the app in `development mode`.
+  6.2. Run `npm run build`, `npm install -g serve` then `serve -s build` to run the app in `production mode`.
 
 ## Built with
 - Database
