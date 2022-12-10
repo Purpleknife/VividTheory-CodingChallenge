@@ -1,0 +1,28 @@
+
+.container {
+  
+
+  .one_card {
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    width: 25em;
+    margin-top: 1em;
+    flex-wrap: wrap;
+    border-radius: 5px;
+    padding-left: 2em;
+    padding-right: 2em;
+    height: 15em;
+
+    .content {
+      display: -webkit-box;
+      -webkit-line-clamp: 4;
+      -webkit-box-orient: vertical;
+      line-height: 1.8em;
+      max-width: 100%;
+      overflow: hidden;
+    }
+    
+  }
+}
