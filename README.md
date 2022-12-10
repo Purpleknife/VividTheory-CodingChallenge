@@ -49,3 +49,8 @@ This challenge's goal is to implement a responsive blog web application that has
   - SASS
   - axios
   - moment
+  
+  ## Final Product
+
+https://user-images.githubusercontent.com/107894342/206875837-5ba6342f-053f-41b3-8dcf-5a9efe5b5950.mp4
+
