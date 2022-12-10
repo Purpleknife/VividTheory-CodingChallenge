@@ -9,6 +9,15 @@ import './BlogSearchPage.scss';
 
 import moment from "moment";
 
+interface Blog {
+  id: number;
+  title: string;
+  content: string;
+  image: string;
+  published_at: string;
+  slug: string;
+};
+
 
 const BlogSearchPage = () => {
   const [blogs, setBlogs] = useState<any>(null);
@@ -20,7 +29,6 @@ const BlogSearchPage = () => {
   const getTotalOfBlogs = async() => {
     return axios.get('/blogs')
       .then((res) => {
-        console.log('blogs COUNT', res.data.count);
         setCount(res.data.count);
       })
       .catch((error) => {
@@ -32,22 +40,12 @@ const BlogSearchPage = () => {
   const loadBlogs = async(page: number) => {
     return axios.get(`/blogs/${page}`)
       .then((res) => {
-        console.log('blogs data', res.data);
         setBlogs(res.data);
       })
       .catch((error) => {
         console.log(error.message);
       });
   };
-
-  interface Blog {
-    id: number;
-    title: string;
-    content: string;
-    image: string;
-    published_at: string;
-    slug: string;
-  }
 
   const blogList = blogs?.map((blog: Blog) => {
     return (

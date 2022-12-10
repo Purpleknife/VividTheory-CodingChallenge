@@ -66,7 +66,6 @@ const SingleBlogPage = () => {
           <span className='title'>{singleBlog.title}</span>
           <p className='date'><i className="fa-solid fa-calendar-days"></i>{singleBlog.published_at}</p>
         
-
           <div className='blog_content' dangerouslySetInnerHTML={{__html: DOMPurify.sanitize(singleBlog.content)}}></div>
         </div>
       }

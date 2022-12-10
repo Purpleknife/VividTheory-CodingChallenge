@@ -10,6 +10,7 @@ interface PaginationProps {
   setCurrentPage: (n: number | ((n: number) => number)) => void;
 };
 
+
 const Pagination = (props: PaginationProps) => {
   const [maxPageLimit, setMaxPageLimit] = useState<number>();
 
@@ -48,7 +49,6 @@ const Pagination = (props: PaginationProps) => {
   };
 
   
-
   return (
     <div className='pages_list'>
       <ul>
